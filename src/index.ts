@@ -127,7 +127,6 @@ ${
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("/-", (req, res) => {
-  console.log(`__dirname: `, __dirname)
   const md = new MobileDetect(req.headers["user-agent"] as string);
   const isBot = md.is("Bot");
   if (isBot) {

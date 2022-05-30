@@ -125,7 +125,7 @@ ${
   }
 });
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("/-", (req, res) => {
   console.log(`__dirname: `, __dirname)
   const md = new MobileDetect(req.headers["user-agent"] as string);
@@ -135,7 +135,7 @@ app.get("/-", (req, res) => {
     return;
   }
 
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 app.listen(port, () => {
